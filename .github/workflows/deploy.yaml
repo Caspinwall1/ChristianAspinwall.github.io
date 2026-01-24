@@ -1,0 +1,43 @@
+name: Deploy Frontend to Azure Blob Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Upload to Azure Blob Storage ($web)
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob upload-batch \
+            --account-name caspinwallresume \
+            --destination '$web' \
+            --source . \
+            --exclude-pattern ".github/*" \
+            --exclude-pattern ".vscode/*" \
+            --exclude-pattern "function_app.py" \
+            --exclude-pattern "host.json" \
+            --exclude-pattern "requirements.txt"
+            --overwrite
+
+    # OPTIONAL: CDN purge (only if you have CDN enabled)
+    # - name: Purge Azure CDN
+    #   run: |
+    #     az cdn endpoint purge \
+    #       --resource-group <RG_NAME> \
+    #       --profile-name <CDN_PROFILE> \
+    #       --name <CDN_ENDPOINT> \
+    #       --content-paths '/*'
