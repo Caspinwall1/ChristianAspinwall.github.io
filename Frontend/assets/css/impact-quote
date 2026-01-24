@@ -1,0 +1,6 @@
+.impact-quote {
+    font-size: 1.4em;  /* Slightly bigger than normal text */
+    font-weight: bold; /* Make it stand out */
+    color: #333;       /* Darker shade for emphasis */
+    text-align: center; /* Optional: Center the text */
+}
