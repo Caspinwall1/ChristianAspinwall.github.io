@@ -183,17 +183,7 @@
 			});
 
 })(jQuery);
-//animation
-<script>
-document.querySelectorAll('nav a').forEach(a => {
-  a.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-</script>
+
 
 
 
@@ -207,4 +197,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Visitor counter error:", err));
 });
+
 
