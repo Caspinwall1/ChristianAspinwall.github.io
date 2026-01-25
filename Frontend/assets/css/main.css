@@ -60,7 +60,44 @@ footer {
 .hero .btn-primary:hover {
   background-color: #ffd700;
 }
+/* Make input and textarea dark red border */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #8B0000; /* Dark red border */
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
 
+/* On focus make the border more pronounced */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #a10000; /* Slightly brighter red on focus */
+  box-shadow: 0 0 4px rgba(161, 0, 0, 0.6);
+}
+
+/* Send button styling */
+#contact-form button {
+  background: #8B0000; /* Dark red background */
+  color: black;        /* Black text */
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: 3px solid #ffd700; /* Gold border */
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover effects */
+#contact-form button:hover {
+  transform: scale(1.03);
+  background: #a10000; /* Slightly brighter */
+}
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3252,44 +3289,7 @@ ul {
 			transform: scale(1.0) rotate(0deg);
 			opacity: 1;
 		}
-/* Make input and textarea dark red border */
-#contact-form input,
-#contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 2px solid #8B0000; /* Dark red border */
-  border-radius: 4px;
-  outline: none;
-  font-size: 1rem;
-}
 
-/* On focus make the border more pronounced */
-#contact-form input:focus,
-#contact-form textarea:focus {
-  border-color: #a10000; /* Slightly brighter red on focus */
-  box-shadow: 0 0 4px rgba(161, 0, 0, 0.6);
-}
-
-/* Send button styling */
-#contact-form button {
-  background: #8B0000; /* Dark red background */
-  color: black;        /* Black text */
-  padding: 12px 20px;
-  margin-top: 10px;
-  border: 3px solid #ffd700; /* Gold border */
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-/* Hover effects */
-#contact-form button:hover {
-  transform: scale(1.03);
-  background: #a10000; /* Slightly brighter */
-}
 /* Main */
 
 	#main {
@@ -3470,4 +3470,5 @@ ul {
 
 
 		}
+
 
