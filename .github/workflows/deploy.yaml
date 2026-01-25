@@ -26,7 +26,7 @@ jobs:
             --account-name caspinwallresume \
             --destination '$web' \
             --source Frontend \
-            --overwrite
+            --overwrite \
             --auth-mode login
 
     # OPTIONAL: CDN purge (only if you have CDN enabled)
