@@ -27,6 +27,7 @@ jobs:
             --destination '$web' \
             --source Frontend \
             --overwrite
+            --auth-mode login
 
     # OPTIONAL: CDN purge (only if you have CDN enabled)
     # - name: Purge Azure CDN
