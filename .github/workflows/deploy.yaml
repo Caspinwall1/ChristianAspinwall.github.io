@@ -13,11 +13,6 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Upload to Azure Blob Storage ($web)
       uses: azure/CLI@v1
       with:
@@ -26,9 +21,10 @@ jobs:
             --account-name caspinwallresume \
             --destination '$web' \
             --source Frontend \
-            --overwrite \
-            --auth-mode login
+            --sas-token "${{ secrets.AZURE_STORAGE_SAS_TOKEN }}" \
+            --overwrite
 
+            
     # OPTIONAL: CDN purge (only if you have CDN enabled)
     # - name: Purge Azure CDN
     #   run: |
