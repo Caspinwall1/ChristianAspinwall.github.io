@@ -2852,7 +2852,7 @@ ul {
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color: #303030;
 			}
 
 			.tiles article.style3 > .image:before {
@@ -2864,7 +2864,7 @@ ul {
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #eba104;
+				background-color: #770000;
 			}
 
 			.tiles article.style6 > .image:before {
@@ -3470,6 +3470,7 @@ ul {
 
 
 		}
+
 
 
 
