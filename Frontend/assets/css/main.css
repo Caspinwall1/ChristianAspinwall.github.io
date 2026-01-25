@@ -35,6 +35,32 @@ footer {
   color: #e20505;
 }
 
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  color: white;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  margin: 10px 0 20px;
+}
+
+.hero .btn-primary {
+  background-color: #ffdd57;
+  color: #222;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #ffd700;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3404,5 +3430,6 @@ ul {
 			#wrapper > * > .inner {
 				padding: 0 1.25em;
 			}
+
 
 		}
