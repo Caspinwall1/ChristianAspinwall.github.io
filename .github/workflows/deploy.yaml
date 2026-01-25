@@ -25,12 +25,7 @@ jobs:
           az storage blob upload-batch \
             --account-name caspinwallresume \
             --destination '$web' \
-            --source . \
-            --exclude-pattern ".github/*" \
-            --exclude-pattern ".vscode/*" \
-            --exclude-pattern "function_app.py" \
-            --exclude-pattern "host.json" \
-            --exclude-pattern "requirements.txt"
+            --source Frontend \
             --overwrite
 
     # OPTIONAL: CDN purge (only if you have CDN enabled)
