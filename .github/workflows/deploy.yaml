@@ -26,10 +26,12 @@ jobs:
 
             
     # OPTIONAL: CDN purge (only if you have CDN enabled)
-    # - name: Purge Azure CDN
-    #   run: |
-    #     az cdn endpoint purge \
-    #       --resource-group <RG_NAME> \
-    #       --profile-name <CDN_PROFILE> \
-    #       --name <CDN_ENDPOINT> \
-    #       --content-paths '/*'
+    - name: Purge Azure Front Door
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az afd endpoint purge \
+            --resource-group rg-resume-site \
+            --profile-name Resume-frontdoor \
+            --endpoint-name resumesite-endpoint \
+            --content-paths '/*'
