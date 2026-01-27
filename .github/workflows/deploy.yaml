@@ -33,5 +33,5 @@ jobs:
           az afd endpoint purge \
             --resource-group rg-resume-site \
             --profile-name Resume-frontdoor \
-            --endpoint-name resumesite-endpoint \
+            --endpoint-name caspinwall \
             --content-paths '/*'
