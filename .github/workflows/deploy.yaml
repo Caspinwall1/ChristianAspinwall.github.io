@@ -30,12 +30,10 @@ jobs:
             --overwrite
 
     - name: Purge Azure Front Door
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          az afd endpoint purge \
-            --resource-group rg-resume-site \
-            --profile-name Resume-frontdoor \
-            --endpoint-name caspinwall \
-            --content-paths '/*'
+      run: |
+        az afd endpoint purge \
+          --resource-group rg-resume-site \
+          --profile-name Resume-frontdoor \
+          --endpoint-name caspinwall \
+          --content-paths '/*'
 
