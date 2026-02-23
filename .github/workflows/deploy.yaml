@@ -8,19 +8,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
 
     - name: Azure Login
-      uses: azure/login@v1
+      uses: azure/login@v2   # Upgrade to v2 for better OIDC support (but v1 works too)
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}   # Your JSON secret
 
     - name: Upload to Azure Blob Storage ($web)
-      uses: azure/CLI@v1
+      uses: azure/cli@v2
       with:
+        azcliversion: latest   # Or pin a version like '2.82.0' if needed
         inlineScript: |
           az storage blob upload-batch \
             --account-name caspinwallresume \
@@ -30,10 +30,12 @@ jobs:
             --overwrite
 
     - name: Purge Azure Front Door
-      run: |
-        az afd endpoint purge \
-          --resource-group rg-resume-site \
-          --profile-name Resume-frontdoor \
-          --endpoint-name caspinwall \
-          --content-paths '/*'
-
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az afd endpoint purge \
+            --resource-group rg-resume-site \
+            --profile-name Resume-frontdoor \
+            --endpoint-name caspinwall \
+            --content-paths '/*'
