@@ -2879,7 +2879,7 @@ ul {
 			}
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
-					background-color: #333333;
+				    background-color: rgba(51, 51, 51, 0.35);
 					opacity: 0.35;
 				}
 
